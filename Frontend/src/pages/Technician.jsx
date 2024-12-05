@@ -1,8 +1,27 @@
-import React from 'react'
+import { AppRouterContext } from 'next/dist/shared/lib/app-router-context.shared-runtime'
+import React, { useContext } from 'react'
 
 const Technician = () => {
+
+
+const {speciality} = useparams()
+ 
+const {Technician} = useContext(AppRouterContext)
+
   return (
-    <div>Technician</div>
+    <div>
+      <p>Browse through the Tecgnician specialist.</p>
+      <div>
+        <div>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>  
+        </div>
+      </div>
   )
 }
 

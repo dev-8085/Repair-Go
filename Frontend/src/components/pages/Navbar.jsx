@@ -8,13 +8,14 @@ const Navbar = () => {
 
   return (  
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b-2 border-b-gray-400'>
-      <img onClick={()=>navigate('/')}className='w-44 cursor-pointer' src={assets.logo} alt="Logo" />
+      <img onClick={() =>navigate(`/appointment/${item._id}`)}
+       className='w-44 cursor-pointer' src={assets.logo} alt="Logo" />
       <ul className='hidden md:flex items-start gap-5 font-medium'>
         <NavLink to="/">
           <li className='py-1'>HOME</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
-        <NavLink to="/technicians">
+        <NavLink to="/Technician">
           <li className='py-1'>All TECHNICIAN</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>

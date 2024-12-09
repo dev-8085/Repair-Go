@@ -1,13 +1,23 @@
-import { AppRouterContext } from 'next/dist/shared/lib/app-router-context.shared-runtime';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
 const Technician = () => {
-  const {} = useParams();
-  const [filterDoc, setFilterDoc] = useState([]);
-  const { Technician } = useContext(AppRouterContext);
-  const navigate = useNavigate();
 
+  const {speciality} = useParams();
+  const [filterDoc, setFilterDoc] = useState([]);
+  const { Technician } = useContext(AppContext);
+ const applyFilter = () => {
+  if (speciality) {
+    setFilterDoc(Technician.filter(doc => doc.speciality == speciality))
+  } else {
+    setFilterDoc(doctors)
+  }
+ }
+ useEffect(()=>{
+  applyFilter()
+ },
+[doctors,speciality])
   return (
     <div>
       <p>Browse through the Technician specialist.</p>
@@ -21,7 +31,8 @@ const Technician = () => {
           <p>Storage Problems</p>
         </div>
         <div>
-          {filterDoc.map((item, index) => (
+          {
+          filterDoc.map((item, index) => (
             <div
               key={index}
               onClick={() => navigate(`/appointment/${item._id}`)}

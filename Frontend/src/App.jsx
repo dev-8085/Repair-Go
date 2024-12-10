@@ -7,8 +7,8 @@ import Contact from './pages/Contact';
 import MyProfile from './pages/MyProfile';
 import Technicians from './pages/Technician';
 import MyAppointments from './pages/MyAppointment';
-import Navbar from './components/pages/Navbar';
-import Footer from './components/pages/Footer';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => {
   return (

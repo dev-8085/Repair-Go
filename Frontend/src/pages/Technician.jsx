@@ -11,13 +11,13 @@ const Technician = () => {
   if (speciality) {
     setFilterDoc(Technician.filter(doc => doc.speciality == speciality))
   } else {
-    setFilterDoc(doctors)
+    setFilterDoc(Technician)
   }
  }
  useEffect(()=>{
   applyFilter()
  },
-[doctors,speciality])
+[Technician,speciality])
   return (
     <div>
       <p>Browse through the Technician specialist.</p>

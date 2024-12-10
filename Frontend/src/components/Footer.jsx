@@ -1,5 +1,5 @@
 import React from 'react'
-import { assets } from '../../assets/assets'
+import { assets } from '../assets/assets'
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'; // Import icons
 
 const Footer = () => {

@@ -1,15 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
 const Technician = () => {
 
   const {speciality} = useParams();
   const [filterDoc, setFilterDoc] = useState([]);
+  
   const { Technician } = useContext(AppContext);
+
+
  const applyFilter = () => {
   if (speciality) {
-    setFilterDoc(Technician.filter(doc => doc.speciality == speciality))
+    setFilterDoc(Technician.filter(doc => doc.speciality === speciality))
   } else {
     setFilterDoc(Technician)
   }
@@ -24,7 +27,7 @@ const Technician = () => {
       <div>
         <div>
           <p>Software Glitches</p>
-          <p>Screen Issues</p>
+          <p>Screen Issues</p> 
           <p>Battery Problems</p>
           <p>Overheating</p>
           <p>Sound Problems</p>

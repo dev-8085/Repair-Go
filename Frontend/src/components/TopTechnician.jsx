@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState }  from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
@@ -36,7 +36,7 @@ const TopTechnician = () => {
                 {item.name}
               </h2>
               <p className="text-gray-600 text-sm">{item.speciality}</p>
-              <div className="mt-3 flex items-center justify-center gap-2 text-sm">
+              <div className=" mt-3 flex items-center justify-center gap-2 text-sm">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 <span className="text-green-500">Available</span>
               </div>
@@ -46,7 +46,7 @@ const TopTechnician = () => {
       </div>
       {visibleTechnicians < Technician.length && (
         <button
-          onClick={handleShowMore}
+          onClick={()=>{navigate ('/Technician'); scrollTo(0,0)}}
           className="bg-blue-600 text-white font-semibold px-10 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300"
         >
           Show More

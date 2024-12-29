@@ -9,6 +9,7 @@ import Technicians from './pages/Technician';
 import MyAppointments from './pages/MyAppointment';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Appointment from './pages/Appointment';
 
 const App = () => {
   return (
@@ -16,13 +17,14 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/Technician' element= {<Technicians/>} />
         <Route path='/Technician/:speciality' element={<Technicians />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/About' element={<About />} />
         <Route path='/Contact' element={<Contact />} />
         <Route path='/my-profile' element={<MyProfile />} />
         <Route path='/my-appointments' element={<MyAppointments />} />
-        <Route path='/appointments/:docId' element={<MyAppointments />} />
+        <Route path='/appointments/:docId' element={<Appointment/>} />
       </Routes>
     <Footer/>
     </div>

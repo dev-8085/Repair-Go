@@ -25,15 +25,15 @@ const Technician = () => {
     <div>
       <p className='text-gray-600'>Browse through the Technician specialist.</p>
       <div className='flex flex-col sm:flex-row items-start gap-5 mt-5 '>
-        <div className='flex-col gap-4 text-sm text-gray-600'>
-          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Software Glitches</p>
-          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Screen Issues</p> 
-          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Battery Problems</p>
-          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Overheating</p>
-          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Sound Problems</p>
-          <p className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Storage Problems</p>
+        <div className='flex flex-col gap-4 text-sm text-gray-600'>
+          <p onClick={()=>speciality === 'Software Glitches' ? navigate('/Technician') : navigate('/Technician/Software Glitches')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Software Glitches</p>
+          <p onClick={()=>speciality === 'Screen Issues' ? navigate('/Technician') : navigate('/Technician/Screen Issues')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Screen Issues</p> 
+          <p onClick={()=>speciality === 'Battery Problems' ? navigate('/Technician') : navigate('/Technician/Battery Problems')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Battery Problems</p>
+          <p onClick={()=>speciality === 'Overheating' ?   navigate('/Technician') : navigate('/Technician/Overheating')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Overheating</p>
+          <p onClick={()=>speciality === 'Sound Problems' ? navigate('/Technician') : navigate('/Technician/Sound Problems')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Sound Problems</p>
+          <p onClick={()=>speciality === 'Storage Problems' ? navigate('/Technician') : navigate('/Technician/Storage Problems')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Storage Problems</p>
         </div>
-        <div>
+        <div className='w-full grid grid-cols-auto gap-4 gap-y-6'>
           {
           filterDoc.map((item, index) => (
             <div

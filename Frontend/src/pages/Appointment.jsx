@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
+import RelatedTechnician from '../components/RelatedTechnician'
 
 const Appointment = () => {
     const { docId } = useParams()
@@ -10,6 +11,7 @@ const Appointment = () => {
     const [docInfo, setDocInfo] = useState(null)
     const [docSlots, setDocSlots] = useState([])
     const [slotIndex, setSlotIndex] = useState(0)
+    const [slotTime, setSlotTime] = useState('')
 
     const fetchDocInfo = async () => {
         const docInfo = Technician.find(doc => doc._id === docId)
@@ -105,10 +107,28 @@ const Appointment = () => {
                </div>
             ))
             }
-                
-                </div>
         </div>
-    )
+
+        <div className='flex items-center gap-3  w-full overflow-x-auto mt-4'>
+            {docSlots.length && docSlots[slotIndex].map((item,index)=>(
+        <p onClick={()=>setSlotTime(item.time)} className={`text-sm font-light flex-shrink-0 py-2 px-5 rounded-full cursor-pointer ${item.time === slotTime ? 'bg-primary text-white':'text-gray-400 border border-gray-300'}`}
+        key={index}>{item.time.toLowerCase()}
+        </p>
+
+        ))}
+        </div>
+        <button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6'>
+            Book an appointment
+        </button>
+
+        {/* ------------- Related Technicians -------------- */}
+    <RelatedTechnician docId={docId} speciality={docInfo.speciality} />
+    </div>  
+
+);
+
+               
+
 }
 
 export default Appointment
